@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ETicaret.Model.Entities.Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<body>
+<h1>ETicaret Sitemiz AnaSayfası</h1>
+
+<br />
+
+<div class="container mt-5">
+
+    <div class="row">
+           
+        @foreach (var item in Model)
+        {
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.CategoryName</h5>
+                        <p class="card-text">@item.CategoryDescription</p>
+                        <a asp-controller="Category" asp-action="Products" asp-route-id="@item.ID" class="btn btn-primary">Ürünleri Gör</a>
+                    </div>
+                        <img src="~/images/indir (5).jpg" />
+                </div>
+
+            </div>
+        }
+    </div>
+
+</div>
+</body>

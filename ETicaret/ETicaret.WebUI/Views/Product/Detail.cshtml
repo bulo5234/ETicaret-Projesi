@@ -1,0 +1,17 @@
+﻿@model ETicaret.Model.Entities.Product
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Ürün Detayı</h1>
+
+<br />  
+
+<form asp-controller="Cart" asp-action="AddToCart" method="post">
+    <input type="hidden" name="ID" value="@Model.ID" />
+    <input type="text" name="ProductName" value="@Model.ProductName" readonly /><br /><br />
+    <input type="text" name="ProductPrice" value="@Model.ProductPrice" readonly /><br /><br />  
+    <input type="submit" value="Sepete Ekle" class="btn btn-success" />
+</form>
+

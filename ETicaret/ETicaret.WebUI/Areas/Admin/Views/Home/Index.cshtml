@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Admin Anasayfası</h1>
+
+<p>Admin AnaSayfası Üzerinden Kategori Ve Ürün Ekleme , Çıkarma ve Güncelleme İşlemleri Yapıyoruz.</p>
+    
+<a class="btn btn-outline-success" type="button" asp-area="Admin" asp-controller="Category" asp-action="Index">Kategori İşlemleri</a>
+<a class="btn btn-outline-success" type="button" asp-area="Admin" asp-controller="Product" asp-action="Index">Ürün İşlemleri</a>

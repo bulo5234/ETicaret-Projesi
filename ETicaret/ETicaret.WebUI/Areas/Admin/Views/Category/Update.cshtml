@@ -1,0 +1,26 @@
+﻿@model ETicaret.Model.Entities.Category
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Kategori Güncelle</h1>
+
+@if (ViewBag.CategoryUpdateError != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.CategoryUpdateError
+    </div>
+}
+
+<br />
+
+<form asp-area="Admin" asp-controller="Category" asp-action="Update" method="post">
+
+    <input type="hidden" name="ID" value="@Model.ID" />
+
+    <input type="text" name="CategoryName" value="@Model.CategoryName" placeholder="Kategori Adını Giriniz" /><br />
+    <input type="text" name="CategoryDescription" value="@Model.CategoryDescription" placeholder="Kategori Açıklamasını Giriniz" /><br />
+    <input type="submit" value="Güncelle" class="btn btn-success" />
+</form>

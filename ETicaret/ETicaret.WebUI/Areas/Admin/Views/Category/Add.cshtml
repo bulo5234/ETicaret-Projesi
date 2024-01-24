@@ -1,0 +1,23 @@
+﻿@model ETicaret.Model.Entities.Category
+
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+    
+<h1>Yeni Kategori Ekle</h1>
+
+@if (ViewBag.CategoryAddError != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.CategoryAddError
+    </div>
+}
+
+<br />
+
+<form asp-area="Admin" asp-controller="Category" asp-action="Add" method="post">
+    <input type="text" name="CategoryName" placeholder="Kategori Adını Giriniz" /><br />
+    <input type="text" name="CategoryDescription" placeholder="Kategori Açıklamasını Giriniz" /><br />
+    <input type="submit" value="Kaydet" class="btn btn-success" />
+</form>

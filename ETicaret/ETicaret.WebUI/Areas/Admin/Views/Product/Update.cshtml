@@ -1,0 +1,26 @@
+﻿@model ETicaret.Model.Entities.Product
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Ürün Güncelle</h1>
+
+<br>
+
+<form asp-area="Admin" asp-controller="Product" asp-action="Update" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="ID" value="@Model.ID" />
+    <input type="text" name="ProductName" value="@Model.ProductName" placeholder="Ürün Adını Giriniz" /><br />
+    <input type="text" name="ProductPrice" value="@Model.ProductPrice" placeholder="Ürün Fiyatını Giriniz" /><br />
+    <input type="number" name="ProductStock" value="@Model.ProductStock" placeholder="Ürünün Stok Bilgisini Giriniz" /><br />
+    <input type="text" name="ProductDescription" value="@Model.ProductDescription" placeholder="Ürünün Açıklamasını Giriniz" /><br />
+    <input type="file" name="file" placeholder="Ürünün Resmini Ekleyin" /><br />
+    <select name="CategoryId" itemid="@Model.CategoryId">
+        @foreach (var item in ViewBag.KategoriListesi)
+        {
+            <option value="@item.ID">@item.CategoryName</option>
+        }
+    </select><br />
+    <input type="submit" value="Güncelle" />
+</form>
